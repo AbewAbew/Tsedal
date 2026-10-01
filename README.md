@@ -2,7 +2,7 @@
 
 An isolated local Frappe Bench with Frappe Learning and a separate Tsedal customization app. Project directory: `/home/drse/Projects/tsedal`.
 
-Open **http://tsedal.localhost:18780/lms**. Login at `/login` as **Administrator**. Run `./scripts/credentials` to view the generated password. Modern browsers resolve `*.localhost` locally; no hosts-file changes were made.
+Open **http://tsedal.localhost:18780/en** for the English landing page or **http://tsedal.localhost:18780/am** for Amharic. The site root redirects to `/en`. Courses open at `/lms/courses`. Login at `/login` as **Administrator**. Run `./scripts/credentials` to view the generated password. Modern browsers resolve `*.localhost` locally; no hosts-file changes were made.
 
 ## Daily use
 

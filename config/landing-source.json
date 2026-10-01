@@ -1,0 +1,11 @@
+{
+  "source": "Projects/tsedallms",
+  "integrated_on": "2026-10-01",
+  "files": {
+    "index.html": "35670aa8aaa291c20b9ffa9185e873c82f4cdc2b448e01e545e45f3a1fceffc1",
+    "style.css": "e3e9fb33a904d24db6fddcfde88908c266e7c682951225d42df27092da8db372",
+    "main.js": "9d54d29be4806e455a491f23dfbace90148536719a004add05f595d084a6a9ee",
+    "three-scene.js": "f26d32a5780574908e5dbe6cf3ead0fe8f3ad2d49c44372454a919912e707208",
+    "tsedal.png": "93ca50f849a04a6326c1e373a8bd57bf6772c48068a4830dd5df3d259c08e712"
+  }
+}

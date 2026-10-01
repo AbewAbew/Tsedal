@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="{{ language }}">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{ t("Tsedal (ጸዳል) — Digital Education Platform") | e }}</title>
+<meta content='{{ t("Tsedal (ጸዳል) is an education platform by Digital Rogue Society Experiment Group, providing accessible digital skills training for youth and civil society organizations in Ethiopia.") | e }}' name="description"/>
+<link href="/assets/tsedal/landing/tsedal.png" rel="icon" type="image/png"/>
+<!-- Editorial Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/tsedal/landing/style.css" rel="stylesheet"/>
+<link href="{{ canonical_url }}" rel="canonical"/><link href="{{ english_url }}" hreflang="en" rel="alternate"/><link href="{{ amharic_url }}" hreflang="am" rel="alternate"/><link href="{{ english_url }}" hreflang="x-default" rel="alternate"/></head>
+<body>
+<!-- Micro-Grain Canvas Texture -->
+<div aria-hidden="true" class="texture-layer"></div>
+<!-- Editorial Top Bar (Clean, Minimal, Non-Floating) -->
+<header class="topbar">
+<div class="bar-bounds">
+<a class="brand-signature" href="#hero">
+<img alt='{{ t("Tsedal Logo") | e }}' class="brand-crest" src="/assets/tsedal/landing/tsedal.png"/>
+<div class="brand-titles">
+<span class="fidel-brand">ጸዳል</span>
+<span class="latin-brand">{{ t("Tsedal") | e }}</span>
+</div>
+</a>
+<div class="bar-center">
+<span class="bar-descriptor">{{ t("Digital Rogue Society Experiment Group") | e }}</span>
+</div>
+<div class="bar-actions">
+<!-- Direct LMS Launch Button -->
+<a class="launch-courses-btn lms-link-btn" href="/lms/courses">
+<span class="btn-dot"></span>
+<span>{{ t("Courses") | e }}</span>
+<span class="arrow-glyph">↗</span>
+</a>
+
+<a class="google-sign-link" href="/login?redirect-to=/lms/courses" id="navSignIn">
+<span>{{ t("Sign In") | e }}</span>
+</a>
+
+
+<nav aria-label='{{ t("Language") | e }}' class="language-switcher"><a data-language="en" {% if language == "en" %}aria-current="page"{% endif %} href="/en" hreflang="en" lang="en">EN</a><a data-language="am" {% if language == "am" %}aria-current="page"{% endif %} href="/am" hreflang="am" lang="am">አማ</a></nav></div>
+</div>
+</header>
+<main>
+<!-- ====================================================================
+         SECTION 1: HERO (Pure Editorial Art Direction + 3D Light Wave)
+         ==================================================================== -->
+<section class="editorial-hero" id="hero">
+<div class="canvas-ambient-stage">
+<canvas id="kineticWaveCanvas"></canvas>
+</div>
+<div class="hero-inner">
+<div class="hero-kicker-row">
+<span class="kicker-fidel">ጸዳል</span>
+<span class="kicker-line"></span>
+<span class="kicker-text">{{ t("Your Digital Education Platform • Addis Ababa, Ethiopia") | e }}</span>
+</div>
+<h1 class="hero-manifesto-title">{{ t("Accessible digital education for young minds and civil society.") | e }}</h1>
+<div class="hero-bottom-grid">
+<div class="hero-summary-column">
+<p class="hero-lead-paragraph">{{ t("Empowering youth and civil society organizations (CSOs) through practical, accessible education. Join our community of lifelong learners and make a positive impact across the country.") | e }}</p>
+<div class="hero-direct-actions">
+<!-- Big prominent Courses redirect button -->
+<a class="editorial-cta lms-link-btn" href="/lms/courses">
+<span>{{ t("Explore Courses") | e }}</span>
+<span class="cta-arrow">→</span>
+</a>
+<a class="editorial-google-btn" href="/login?redirect-to=/lms/courses" id="heroSignIn">
+
+<span>{{ t("Sign in to Tsedal") | e }}</span>
+</a>
+</div>
+</div>
+<div class="hero-stats-column">
+<div class="stat-line">
+<span class="stat-big-num">01</span>
+<div class="stat-desc">
+<strong>{{ t("Micro-Learning Format") | e }}</strong>
+<span>{{ t("Bite-sized modules for busy professionals") | e }}</span>
+</div>
+</div>
+<div class="stat-line">
+<span class="stat-big-num">02</span>
+<div class="stat-desc">
+<strong>{{ t("Practical Skills") | e }}</strong>
+<span>{{ t("Real-world projects & hands-on exercises") | e }}</span>
+</div>
+</div>
+<div class="stat-line">
+<span class="stat-big-num">03</span>
+<div class="stat-desc">
+<strong>{{ t("Certificate of Completion") | e }}</strong>
+<span>{{ t("Recognized credential awarded upon finishing") | e }}</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================================================
+         SECTION 2: WHAT YOU LEARN (No Cards, No Boxes — Pure Open Editorial)
+         ==================================================================== -->
+<section class="editorial-curriculum" id="learning">
+<div class="section-bounds">
+<div class="curriculum-lead-row">
+<div class="lead-meta">
+<span class="meta-section-num">{{ t("02 / PLATFORM & COURSES") | e }}</span>
+<h2 class="curriculum-main-heading">{{ t("Learn practical skills designed for real community impact.") | e }}</h2>
+</div>
+<p class="lead-subparagraph">{{ t("Whether you have ten minutes between meetings or an evening to dive deep into a campaign project, Tsedal provides the tools, community, and training you need.") | e }}</p>
+</div>
+<!-- The 4 Core Platform Pillars (Open Graphic Architecture, No Boxes) -->
+<div class="pillars-broadsheet">
+<div class="pillar-broad-item">
+<span class="pillar-roman">I</span>
+<div class="pillar-content">
+<h3 class="pillar-name">{{ t("Micro Learning") | e }}</h3>
+<p class="pillar-text">{{ t("Bite-sized lessons designed for busy professionals. Short, focused modules you can complete anytime on mobile or desktop.") | e }}</p>
+</div>
+</div>
+<div class="pillar-broad-item">
+<span class="pillar-roman">II</span>
+<div class="pillar-content">
+<h3 class="pillar-name">{{ t("Practical Skills") | e }}</h3>
+<p class="pillar-text">{{ t("Real-world applications and hands-on projects. Work directly on campaign assets, narrative pitches, and security protocols.") | e }}</p>
+</div>
+</div>
+<div class="pillar-broad-item">
+<span class="pillar-roman">III</span>
+<div class="pillar-content">
+<h3 class="pillar-name">{{ t("Community") | e }}</h3>
+<p class="pillar-text">{{ t("Connect with fellow learners, exchange experiences, and collaborate on civic initiatives across Ethiopia and beyond.") | e }}</p>
+</div>
+</div>
+<div class="pillar-broad-item">
+<span class="pillar-roman">IV</span>
+<div class="pillar-content">
+<h3 class="pillar-name">{{ t("Certificate of Completion") | e }}</h3>
+<p class="pillar-text">{{ t("Earn an official Certificate of Completion upon finishing your course to showcase on your CV and professional profiles.") | e }}</p>
+</div>
+</div>
+</div>
+<!-- Evolving Focus Areas (Broad, Non-Rigid Overview) -->
+<div class="focus-areas-block">
+<div class="focus-label-line">
+<span class="focus-badge">{{ t("AREAS OF FOCUS") | e }}</span>
+<span class="focus-subtitle">{{ t("Dynamic learning pathways continuously updated in the portal") | e }}</span>
+</div>
+<h3 class="focus-headline">{{ t("Practical knowledge built for modern digital realities") | e }}</h3>
+<p class="focus-body-copy">{{ t("Rather than locked or rigid academic curricula, Tsedal delivers evolving, practical training designed for Ethiopian youth and civil society organizations. As new programs are added to the platform, focus areas include:") | e }}</p>
+<div class="focus-open-table">
+<div class="focus-row-item">
+<div class="focus-num-block">01</div>
+<div class="focus-info-block">
+<span class="focus-name">{{ t("Safe AI Usage & Digital Literacy") | e }}</span>
+<span class="focus-desc">{{ t("Understanding how to safely, responsibly, and effectively utilize artificial intelligence tools in daily workflows, research, and civic advocacy without compromising privacy or security.") | e }}</span>
+</div>
+</div>
+<div class="focus-row-item">
+<div class="focus-num-block">02</div>
+<div class="focus-info-block">
+<span class="focus-name">{{ t("Content Preparation & Management") | e }}</span>
+<span class="focus-desc">{{ t("Structuring clear messages, narrative storytelling, strategic communication, and managing digital publications across diverse audiences and platforms.") | e }}</span>
+</div>
+</div>
+<div class="focus-row-item">
+<div class="focus-num-block">03</div>
+<div class="focus-info-block">
+<span class="focus-name">{{ t("Digital Safety & Organization Defense") | e }}</span>
+<span class="focus-desc">{{ t("Essential operational hygiene, safeguarding personal and organizational data, and protecting communication channels against online threats.") | e }}</span>
+</div>
+</div>
+<div class="focus-row-item">
+<div class="focus-num-block">04</div>
+<div class="focus-info-block">
+<span class="focus-name">{{ t("Digital Rights & Civic Technology") | e }}</span>
+<span class="focus-desc">{{ t("Exploring digital freedoms, data privacy principles, and ethical technology practices that strengthen open, inclusive civic spaces.") | e }}</span>
+</div>
+</div>
+</div>
+<div class="catalog-note-line">
+<p>{{ t("Courses and enrollments are hosted directly within Tsedal. Use the Courses link above to browse currently available offerings, schedules, and active cohorts.") | e }}</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================================================
+         SECTION 3: ABOUT & COMPLETION CERTIFICATE (Clean, Grounded, Dignified)
+         ==================================================================== -->
+<section class="editorial-organization" id="about">
+<div class="section-bounds">
+<div class="org-grid-split">
+<!-- Left: About Digital Rogue Society Experiment Group -->
+<div class="org-manifesto-col">
+<div class="org-emblem-row">
+<span class="fidel-big">ጸዳል</span>
+<span class="org-caption">{{ t("Digital Rogue Society Experiment Group") | e }}</span>
+</div>
+<h2 class="org-title">{{ t("About Tsedal") | e }}</h2>
+<p class="org-lead-text">{{ t("A digital civil society organization based in Ethiopia committed to providing high-quality e-learning resources across Africa.") | e }}</p>
+<p class="org-detail-text">{{ t("Founded by Digital Rogue Society Experiment Group, Tsedal was created to ensure that young leaders, non-profits, and civic creators have access to relevant, grounded digital knowledge tailored to local realities.") | e }}</p>
+<div class="org-contacts-table">
+<div class="contact-entry">
+<span class="contact-lbl">{{ t("Email") | e }}</span>
+<a class="contact-lnk" href="mailto:communication@digitalroguesociety.org">communication@digitalroguesociety.org</a>
+</div>
+<div class="contact-entry">
+<span class="contact-lbl">{{ t("Telephone") | e }}</span>
+<span class="contact-txt">+251 911 909 535  /  +251 927 987 727</span>
+</div>
+<div class="contact-entry">
+<span class="contact-lbl">{{ t("Location") | e }}</span>
+<span class="contact-txt">{{ t("Addis Ababa, Ethiopia") | e }}</span>
+</div>
+</div>
+</div>
+<!-- Right: Clear, Honest Certificate of Completion -->
+<div class="certificate-showcase-col">
+<div class="cert-presentation-header">
+<span class="cert-kicker">{{ t("COURSE CREDENTIAL") | e }}</span>
+<h3 class="cert-subhead">{{ t("Earn your Certificate of Completion") | e }}</h3>
+<p class="cert-desc">{{ t("Upon successfully finishing the lectures and exercises for your course, you receive an official Certificate of Completion issued by Digital Rogue Society.") | e }}</p>
+</div>
+<!-- Authentic, Clean Certificate Graphic Display (No Nested Gimmick Boxes) -->
+<div class="certificate-canvas-sheet">
+<div class="sheet-header">
+<img alt='{{ t("Tsedal Logo") | e }}' class="sheet-logo" src="/assets/tsedal/landing/tsedal.png"/>
+<div class="sheet-titles">
+<div class="sheet-fidel">ጸዳል • የዲጂታል ትምህርት መድረክ</div>
+<strong class="sheet-latin">{{ t("TSEDAL DIGITAL EDUCATION PLATFORM") | e }}</strong>
+<span class="sheet-sub">{{ t("DIGITAL ROGUE SOCIETY EXPERIMENT GROUP") | e }}</span>
+</div>
+</div>
+<div class="sheet-title-group">
+<h4 class="sheet-cert-name">{{ t("Certificate of Completion") | e }}</h4>
+<p class="sheet-award-statement">{{ t("THIS CERTIFIES THAT THE LEARNER HAS COMPLETED") | e }}</p>
+</div>
+<div class="sheet-course-title">{{ t("Official Course Completion") | e }}</div>
+<div class="sheet-body-text">{{ t("Demonstrating successful completion of all coursework, exercises, and practical requirements in the enrolled digital training program.") | e }}</div>
+<div class="sheet-footer-line">
+<div class="sheet-sig-box">
+<span class="sig-name">{{ t("DRS Academic Board") | e }}</span>
+<span class="sig-role">{{ t("Digital Rogue Society Experiment Group") | e }}</span>
+</div>
+<div class="sheet-seal-mark">
+<span>ጸዳል</span>
+<small>{{ t("COMPLETED") | e }}</small>
+</div>
+</div>
+</div>
+<div class="cert-cta-action">
+<a class="editorial-cta lms-link-btn" href="/lms/courses">
+<span>{{ t("Start Learning in Tsedal LMS") | e }}</span>
+<span class="cta-arrow">→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Editorial Bottom Bar -->
+<footer class="footer-bar">
+<div class="footer-bounds">
+<div class="footer-left-info">
+<span class="fidel-mini">ጸዳል</span>
+<span>{{ t("Tsedal — Your Digital Education Platform") | e }}</span>
+<span class="dot-sep">•</span>
+<span>{{ t("© 2023–2026 DIGITAL ROGUE SOCIETY EXPERIMENT GROUP. All rights reserved.") | e }}</span>
+</div>
+<div class="footer-right-links">
+<a href="#hero">{{ t("Top") | e }}</a>
+<a href="/lms/courses">{{ t("Courses") | e }}</a>
+<a href="#about">{{ t("About") | e }}</a>
+<a class="lms-link-btn" href="/lms/courses">{{ t("LMS Direct Gateway") | e }}</a>
+<a href="/tsedal-help">{{ t("Help") | e }}</a></div>
+</div>
+</footer>
+
+
+
+
+
+
+<!-- Three.js (r128) -->
+<script defer="" src="/assets/tsedal/landing/vendor/three.min.js"></script>
+<script defer="" src="/assets/tsedal/landing/three-scene.js"></script>
+<script defer="" src="/assets/tsedal/landing/main.js"></script>
+</body>
+</html>

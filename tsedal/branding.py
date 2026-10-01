@@ -5,6 +5,7 @@ import frappe
 def apply_branding():
     website = frappe.get_single("Website Settings")
     website.app_name = "Tsedal"
+    website.home_page = "en"
     # A non-empty override suppresses the framework's default footer attribution.
     website.footer_powered = "<!-- Tsedal -->"
     website.save(ignore_permissions=True)

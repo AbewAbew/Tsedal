@@ -5,7 +5,7 @@ def after_install():
     website = frappe.get_single("Website Settings")
     website.app_name = "Tsedal"
     website.brand_html = "Tsedal"
-    website.home_page = "lms"
+    website.home_page = "en"
     website.save(ignore_permissions=True)
     settings = frappe.get_single("System Settings")
     settings.language = settings.language or "en"

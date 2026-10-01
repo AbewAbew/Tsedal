@@ -2,6 +2,8 @@
 
 This repository contains the Tsedal app and local development tooling. A new VPS requires a separate production Bench installation before the push/pull workflow works. Do not expose `scripts/start` publicly.
 
+The public site is intended for `tsedal.et`: `/en` and `/am` are the English and Amharic landing pages, `/` redirects to `/en`, and `/lms/courses` is the course catalogue. Configure HTTPS and the production `host_name` accordingly. See [LANDING.md](LANDING.md) for landing assets, routes and editing instructions.
+
 ## First deployment
 
 1. Choose the domain and server, then provision supported Frappe 15 dependencies. Use a dedicated OS user, a compatible MariaDB release (Frappe 15's installation guide lists 10.6.6+), Redis, Python 3.11, Node 24 and Yarn. Verify current upstream support when deploying. Avoid upgrading to Frappe 16/17 as part of the initial move.

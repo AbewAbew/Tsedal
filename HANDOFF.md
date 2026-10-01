@@ -51,4 +51,12 @@ The user requested removal of the LMS powered-by footer and Tsedal branding thro
 
 Verified in Chromium: guest and authenticated student help links, the administrator Help panel and a documentation popup, absence of the shared powered-by icon, and mobile help layout. All 14 admin article destinations and the other public guides returned successfully. The public login footer and Desk Help menu settings were checked. The temporary student test account was removed afterward. The guest view still logs an upstream `frappe.apps.get_apps` permission error from its app-switcher resource; it does not block the help or branding changes.
 
-The separate landing-page integration is **paused at the user's request** while they edit `/home/drse/Projects/tsedallms`. Partial landing assets/templates and `tsedal/landing_modules.json` are untracked drafts, not enabled `/en` or `/am` routes. Wait for the user to say the source is ready before resuming that work; do not commit those drafts as part of the branding change.
+## Follow-up: finished landing page
+
+The user confirmed that `/home/drse/Projects/tsedallms` was finished and requested integration. The final editorial design is now served from the custom Tsedal app at `/en` and `/am`, with the root redirecting to `/en`. The old paused draft module data was moved to ignored `.local/paused-landing-drafts/` and is not used.
+
+The shared template is `tsedal/templates/includes/landing.html`, Amharic text is in `tsedal/landing_am.json`, and static assets are in `tsedal/public/landing/`. All course CTAs point to `/lms/courses`; sign-in uses `/login?redirect-to=/lms/courses`. Prototype destination controls and simulated Google authentication were removed. The original source directory was left unchanged. Source hashes are recorded in `config/landing-source.json`.
+
+Three.js and its license are bundled locally. Google Fonts remains external with fallbacks. Landing routes work without JavaScript; the chosen language does not alter LMS account language. The public `tsedal.et` domain still needs VPS deployment, DNS and HTTPS. `LANDING.md` documents the routes, editing and deployment workflow.
+
+Verified both languages at 1440, 768, 390 and 320-pixel widths, including unclipped header controls and no horizontal overflow. Tested language switching, course navigation into the existing LMS, a real Administrator login returning to courses, authenticated root redirect, no-JavaScript rendering/navigation, and the 2D animation fallback. `scripts/check-landing.py` passed for routes, translations, metadata and local assets. Original landing source hashes remained unchanged.
