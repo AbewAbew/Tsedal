@@ -34,11 +34,12 @@ The LMS page and 43 referenced assets loaded; branding was Tsedal; Administrator
 
 - **MariaDB compatibility:** local MariaDB is **12.3.3**. Frappe 15 warned that it is outside the tested range. Site creation and the checks above passed, but full compatibility is unproven. Before deploying to a VPS, select and verify a supported MariaDB version. Move data using logical backups, not the raw data directory. Do not downgrade the user's shared system installation as a shortcut.
 - Local Redis commands use Valkey 9.1.2. Local background jobs worked.
-- No GitHub remote has been configured or pushed. The user will create the repository; connect it when its URL is provided.
+- The user created `https://github.com/AbewAbew/Tsedal.git` and authorized pushing this project. It is the intended `origin` remote.
 - Git push/pull transfers code only. Database content, users, progress, uploads and encryption keys require separate secure migration.
 - Direct edits inside ignored `bench/apps/lms` will not travel with this repository. Use a separate LMS fork for upstream frontend changes; keep Tsedal customizations here when possible.
 - Installation/build regenerated LMS frontend dependency and component files. The resolved frontend lockfile and Python dependency snapshot are saved under `config/dependency-locks/`.
 - VPS provisioning, production process management, HTTPS, email and payment configuration remain for the deployment phase. Local launchers are development tooling.
+- Configure production Google login after the public domain and HTTPS are working. `DEPLOYMENT.md` records the callback URL and setup order. Google login is currently disabled; local testing with separate development credentials is optional.
 - Compatible wkhtmltopdf is not installed; PDF printing/certificate export has not been verified.
 
 See `README.md` for daily workflow and `DEPLOYMENT.md` for the server migration sequence.

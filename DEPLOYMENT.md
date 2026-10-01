@@ -23,6 +23,16 @@ The public site is intended for `tsedal.et`: `/en` and `/am` are the English and
 7. Set `host_name` to `https://YOUR_DOMAIN`; disable `developer_mode`. From the server Bench, run `python apps/tsedal/scripts/apply-lms-branding.py apps/lms` before `bench build --production`. Then run `bench --site YOUR_DOMAIN migrate` and enable the scheduler. The patch preserves the Tsedal sidebar/Help branding; migration applies website footer and Desk Help settings.
 8. Configure production process management, Gunicorn, nginx, HTTPS, firewall rules, email delivery and off-server backups. Keep the database and Redis private. Verify login, courses, uploads, background jobs and certificates before switching DNS traffic.
 
+## Google login
+
+Configure production Google login after `https://tsedal.et` is deployed with working HTTPS. Create a Google OAuth web application and register the exact callback URL:
+
+```text
+https://tsedal.et/api/method/frappe.integrations.oauth2_logins.login_via_google
+```
+
+Configure the Google provider in the site's Social Login Key settings, store the client secret outside Git, and test both existing-account login and new-user access. Keep username/password login available. Local testing is optional and should use separate development credentials with an explicitly registered localhost callback. Google login is not enabled in the current installation.
+
 ## Subsequent updates
 
 Back up first. In the server's `apps/tsedal` checkout, pull the reviewed commit from GitHub. From the server Bench, install changed requirements, run `python apps/tsedal/scripts/apply-lms-branding.py apps/lms`, build assets, migrate the site and restart its services. If the branding patch check fails after an upstream update, review and refresh the patch before deploying. Changes to upstream app versions are separate, deliberate deployments using an updated `versions.json`.
