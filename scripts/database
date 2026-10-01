@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/env.sh"
+exec mariadbd --defaults-file="$TSEDAL_ROOT/.local/mariadb.cnf"

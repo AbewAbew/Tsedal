@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/env.sh"
+umask 077
+"$TSEDAL_ROOT/scripts/bench" --site tsedal.localhost backup --with-files --compress
+mkdir -p "$TSEDAL_ROOT/backups"
+cp "$TSEDAL_ROOT"/bench/sites/tsedal.localhost/private/backups/* "$TSEDAL_ROOT/backups/"
+echo "Backups copied to $TSEDAL_ROOT/backups. Keep these private and copy them off this machine."

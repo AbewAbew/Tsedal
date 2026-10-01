@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -euo pipefail
+exec journalctl --user -u tsedal.service -n 80 -f

@@ -1,0 +1,20 @@
+{
+  "python": "3.11.16",
+  "node": "24.21.0",
+  "yarn": "1.22.22",
+  "bench": "5.31.0",
+  "apps": {
+    "frappe": {
+      "url": "https://github.com/frappe/frappe.git",
+      "commit": "0b282e81ef30a7f6b8ff376ca8eacf9fb9f28f05"
+    },
+    "payments": {
+      "url": "https://github.com/frappe/payments",
+      "commit": "9885a6e500104f1f160add47d55b370773e67a81"
+    },
+    "lms": {
+      "url": "https://github.com/frappe/lms",
+      "commit": "7c46bb8f4976222b3f6aa84368551c424edaa194"
+    }
+  }
+}

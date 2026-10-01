@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/env.sh"
+if systemctl --user is-active --quiet tsedal.service; then
+  echo "Tsedal is already running: http://tsedal.localhost:18780/lms"
+  exit 0
+fi
+systemd-run --user --unit=tsedal --collect \
+  --description="Tsedal isolated Frappe Bench" \
+  --property="WorkingDirectory=$TSEDAL_ROOT" \
+  --property=TimeoutStopSec=90 \
+  "$TSEDAL_ROOT/scripts/start"
+echo "Tsedal is starting: http://tsedal.localhost:18780/lms"

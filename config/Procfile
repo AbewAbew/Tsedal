@@ -1,0 +1,7 @@
+mariadb: ../scripts/database
+redis_cache: redis-server config/redis_cache.conf
+redis_queue: redis-server config/redis_queue.conf
+web: env/bin/python ../scripts/serve.py
+socketio: node --require ../scripts/localhost.cjs apps/frappe/socketio.js
+schedule: bench schedule
+worker: bench worker --queue short,default,long
