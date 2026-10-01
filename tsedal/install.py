@@ -11,3 +11,6 @@ def after_install():
     settings.language = settings.language or "en"
     settings.time_zone = "Africa/Addis_Ababa"
     settings.save(ignore_permissions=True)
+    from tsedal.branding import apply_branding
+
+    apply_branding()

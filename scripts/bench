@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
+if [[ "${1:-}" == "build" ]]; then
+  "$TSEDAL_ROOT/.local/bench-cli/bin/python" "$TSEDAL_ROOT/scripts/apply-lms-branding.py"
+fi
 cd "$TSEDAL_ROOT/bench"
 exec "$TSEDAL_ROOT/.local/bench-cli/bin/bench" "$@"

@@ -18,12 +18,12 @@ This repository contains the Tsedal app and local development tooling. A new VPS
    ```
 
    Preserve the original site's encryption key in the destination site configuration. Keep the destination's database host, port, name and password. Do not overwrite them with localhost development values.
-7. Set `host_name` to `https://YOUR_DOMAIN`; disable `developer_mode`; run `bench build --production`, `bench --site YOUR_DOMAIN migrate` and enable the scheduler.
+7. Set `host_name` to `https://YOUR_DOMAIN`; disable `developer_mode`. From the server Bench, run `python apps/tsedal/scripts/apply-lms-branding.py apps/lms` before `bench build --production`. Then run `bench --site YOUR_DOMAIN migrate` and enable the scheduler. The patch preserves the Tsedal sidebar/Help branding; migration applies website footer and Desk Help settings.
 8. Configure production process management, Gunicorn, nginx, HTTPS, firewall rules, email delivery and off-server backups. Keep the database and Redis private. Verify login, courses, uploads, background jobs and certificates before switching DNS traffic.
 
 ## Subsequent updates
 
-Back up first. In the server's `apps/tsedal` checkout, pull the reviewed commit from GitHub. From the server Bench, install changed requirements, build assets, migrate the site and restart its services. Changes to upstream app versions are separate, deliberate deployments using an updated `versions.json`.
+Back up first. In the server's `apps/tsedal` checkout, pull the reviewed commit from GitHub. From the server Bench, install changed requirements, run `python apps/tsedal/scripts/apply-lms-branding.py apps/lms`, build assets, migrate the site and restart its services. If the branding patch check fails after an upstream update, review and refresh the patch before deploying. Changes to upstream app versions are separate, deliberate deployments using an updated `versions.json`.
 
 Database content (courses, lessons, users, progress) and uploaded files do not travel through Git. Do not restore a development database over a live production database containing student activity.
 

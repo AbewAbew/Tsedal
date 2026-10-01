@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title | e }} · Tsedal Help</title>
+  <meta name="description" content="Help with Tsedal courses, learning, assessments and platform administration.">
+  <link rel="stylesheet" href="/assets/tsedal/css/help.css">
+</head>
+<body>
+  <a class="skip" href="#guide">Skip to guide</a>
+  <header><a class="brand" href="/tsedal-help">ጸዳል <span>Tsedal Help</span></a>
+    <nav aria-label="Main"><a href="/lms/courses">Courses</a><a href="/login?redirect-to=/lms/courses">Sign in</a></nav>
+  </header>
+  <div class="layout">
+    <aside><nav aria-label="Help guides">
+      {% for section, entries in sections %}
+      <section><h2>{{ section | e }}</h2>
+        {% for key, label in entries %}
+        <a href="/tsedal-help/{{ key }}" {% if key == slug %}aria-current="page"{% endif %}>{{ label | e }}</a>
+        {% endfor %}
+      </section>
+      {% endfor %}
+    </nav></aside>
+    <main id="guide"><p class="eyebrow">Tsedal Help Center</p><h1>{{ title | e }}</h1>
+      {% for paragraph in paragraphs %}<p>{{ paragraph | e }}</p>{% endfor %}
+      <div class="next"><a href="/lms/courses">Go to Tsedal courses →</a><a href="/tsedal-help/student">Student guide</a><a href="/tsedal-help/administrator">Administrator guide</a></div>
+    </main>
+  </div>
+  <footer>Tsedal · Learn, practice, grow.</footer>
+</body>
+</html>

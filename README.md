@@ -41,6 +41,10 @@ This directory is the Git repository and also the installable `tsedal` Frappe ap
 
 Upstream apps live in `bench/apps/frappe`, `bench/apps/payments` and `bench/apps/lms`; their source commits are recorded in `versions.json`. They are not included in this repository. If you need to change LMS's Vue frontend directly, create a separate LMS fork and record that fork and its commit. Changes inside the ignored `bench/` directory will not be pushed with this repository.
 
+The shared LMS sidebar branding is maintained as an explicit exception in `patches/lms-branding.patch`. It removes the powered-by link, brands the administrator onboarding as Tsedal, and sends help links to `/tsedal-help`. The local `./scripts/bench build` wrapper checks/applies the patch before every build and stops if the upstream source is incompatible. The Help pages are part of this custom app and work for guests, students and administrators. Website footer and Desk Help menu settings are applied on app installation and migration by `tsedal.branding.apply_branding`.
+
+On a server, from the Bench directory, run `python apps/tsedal/scripts/apply-lms-branding.py apps/lms` **before** `bench build --production`; run `bench --site YOUR_DOMAIN migrate` to apply the persistent settings. Do not discard the LMS patch during updates. If a separate LMS fork is created later, move this patch into the fork and update the deployment workflow accordingly.
+
 When you have created the GitHub repository:
 
 ```bash

@@ -42,3 +42,13 @@ The LMS page and 43 referenced assets loaded; branding was Tsedal; Administrator
 - Compatible wkhtmltopdf is not installed; PDF printing/certificate export has not been verified.
 
 See `README.md` for daily workflow and `DEPLOYMENT.md` for the server migration sequence.
+
+## Follow-up: branding and Help
+
+The user requested removal of the LMS powered-by footer and Tsedal branding throughout Help for administrators, students and guests. `patches/lms-branding.patch` tracks the shared sidebar change, preserves administrator onboarding, and points its help articles to the custom app's `/tsedal-help` pages. The local Bench wrapper applies/checks the patch before builds. The server deployment notes include the equivalent explicit patch step.
+
+`tsedal.branding.apply_branding` runs on installation and migration. It suppresses the default website footer attribution and replaces upstream support/about entries in the Desk Help menu with Tsedal guides, preserving keyboard shortcuts and standard hidden rows. Public help content lives in `tsedal/help_content.py` and `tsedal/www/tsedal_help.*`.
+
+Verified in Chromium: guest and authenticated student help links, the administrator Help panel and a documentation popup, absence of the shared powered-by icon, and mobile help layout. All 14 admin article destinations and the other public guides returned successfully. The public login footer and Desk Help menu settings were checked. The temporary student test account was removed afterward. The guest view still logs an upstream `frappe.apps.get_apps` permission error from its app-switcher resource; it does not block the help or branding changes.
+
+The separate landing-page integration is **paused at the user's request** while they edit `/home/drse/Projects/tsedallms`. Partial landing assets/templates and `tsedal/landing_modules.json` are untracked drafts, not enabled `/en` or `/am` routes. Wait for the user to say the source is ready before resuming that work; do not commit those drafts as part of the branding change.
