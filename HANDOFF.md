@@ -34,7 +34,7 @@ The LMS page and 43 referenced assets loaded; branding was Tsedal; Administrator
 
 - **MariaDB compatibility:** local MariaDB is **12.3.3**. Frappe 15 warned that it is outside the tested range. Site creation and the checks above passed, but full compatibility is unproven. Before deploying to a VPS, select and verify a supported MariaDB version. Move data using logical backups, not the raw data directory. Do not downgrade the user's shared system installation as a shortcut.
 - Local Redis commands use Valkey 9.1.2. Local background jobs worked.
-- The user created `https://github.com/AbewAbew/Tsedal.git` and authorized pushing this project. It is the intended `origin` remote.
+- The user created `https://github.com/AbewAbew/Tsedal.git` and authorized pushing this project. `origin` is configured, the first push succeeded on 2026-10-01, and `main` tracks `origin/main`. Runtime data and credentials remain local and excluded from Git.
 - Git push/pull transfers code only. Database content, users, progress, uploads and encryption keys require separate secure migration.
 - Direct edits inside ignored `bench/apps/lms` will not travel with this repository. Use a separate LMS fork for upstream frontend changes; keep Tsedal customizations here when possible.
 - Installation/build regenerated LMS frontend dependency and component files. The resolved frontend lockfile and Python dependency snapshot are saved under `config/dependency-locks/`.

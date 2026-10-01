@@ -45,11 +45,10 @@ The shared LMS sidebar branding is maintained as an explicit exception in `patch
 
 On a server, from the Bench directory, run `python apps/tsedal/scripts/apply-lms-branding.py apps/lms` **before** `bench build --production`; run `bench --site YOUR_DOMAIN migrate` to apply the persistent settings. Do not discard the LMS patch during updates. If a separate LMS fork is created later, move this patch into the fork and update the deployment workflow accordingly.
 
-When you have created the GitHub repository:
+The repository is [AbewAbew/Tsedal](https://github.com/AbewAbew/Tsedal). `origin` is configured and `main` tracks `origin/main`. Push committed changes with:
 
 ```bash
-git remote add origin git@github.com:YOUR_ACCOUNT/tsedal.git
-git push -u origin main
+git push
 ```
 
 Future code changes use `git add`, `git commit` and `git push`. On a configured server, pull the Tsedal app repository, run `bench setup requirements`, `bench build --production`, `bench --site YOUR_DOMAIN migrate`, and restart that server's managed services. Back up before deploying changes. A Git pull alone does not install a server or migrate its database.
